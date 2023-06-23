@@ -15,9 +15,9 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		n *= -1;
-		k = n;
-		_putchar('_');
+	n *= -1;
+	k = n;
+	_putchar('_');
 	}
 	k /= 10;
 	if (k != 0)
