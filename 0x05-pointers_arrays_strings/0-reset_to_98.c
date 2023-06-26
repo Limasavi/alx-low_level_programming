@@ -2,20 +2,11 @@
 
 /**
  * reset_to_98 - updates the value it points to to 98
- * @p: parameter to change
+ * @n: parameter to change
  * Return: Nothing
  */
 
-void reset_to_98(int *p)
+void reset_to_98(int *n)
 {
-	int n;
-
-	n = 402;
-	p = &n;
-
-	_putchar('n');
-	_putchar('\n');
-	*p = 98;
-	_putchar('n');
-	_putchar('\n');
+	*n = 98;
 }
