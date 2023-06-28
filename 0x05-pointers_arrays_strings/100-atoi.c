@@ -23,7 +23,11 @@ int _atoi(char *s)
 		{
 			int digit = *s - '0';
 
-			if (result < INT_MIN / 10 || (result == INT_MIN / 10 && digit > 8))
+			if (result == INT_MIN / 10 && digit == 8)
+			{
+				return (INT_MIN);
+			}
+			else if (result < INT_MIN / 10 || (result == INT_MIN / 10 && digit > 8))
 			{
 				if (sign == 1)
 					return (INT_MAX);
