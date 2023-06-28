@@ -10,26 +10,25 @@ int _atoi(char *s)
 {
 	int sign = 1;
 	int result = 0;
-	int i = 0;
+	int foundDigit = 0;
 
-	if (s[0] == '-')
+	while (*s)
 	{
-		sign = -1;
-		i++;
-	}
-	for (; s[i] != '\0'; i++)
-	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (*s == '-' && !foundDigit)
 		{
-			if (sign == 1)
-				result = result * 10 + (s[i] - '0');
-			else
-				result = result * 10 - (s[i] - '0');
+			sign *= -1;
 		}
-		else
+		else if (*s >= '0' && *s <= '9')
+		{
+			result = result * 10 + (*s - '0');
+			foundDigit = 1;
+		}
+		else if (foundDigit)
 		{
 			break;
 		}
+		s++;
 	}
-	return result;
+
+	return sign * result;
 }
