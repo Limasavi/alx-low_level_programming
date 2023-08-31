@@ -16,4 +16,8 @@ int _sqrt_recursion(int n);
 
 int sqrt_helper(int n, int guess);
 
+int check_prime(int n, int divisor);
+
+int is_prime_number(int n);
+
 #endif /* MAIN_H */
